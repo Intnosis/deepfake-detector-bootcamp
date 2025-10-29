@@ -1,22 +1,16 @@
-test_1 = ['a.jpg', 'b.png', ' C.JPG']
-test_2 = ['photo.JPG', 'photo2.jpeg', 'image.PNG', 'dog.jpg']
-test_3 = ['hello.txt', 'test.docx', 'notes.pdf']
+import pandas as pd
 
+students_data = {
+    'Name': ['Anna', 'Ben', 'Cara', 'Drew', 'Ella'],
+    'Age': [20,21,22,20,23],
+    'Grade':[89, 75, 92, 85, 90],
+    'City': ['Manila', 'Cebu', 'Davao', 'Manila', 'Baguio'],
+    'Scholarship': ['Yes', 'No', 'Yes', 'No', 'Yes']
+}
 
-def count_test(counting):
-    count = 0
+students_df = pd.DataFrame(students_data)
 
-    for test in counting:
-        if test.lower().endswith('jpg'):
-            count += 1
-            
-    return count
+students_df.set_index('Name', inplace=True)
+row = students_df.iloc[3]
 
-print('Test 1:',test_1)
-print('JPG count:',count_test(test_1))
-print('\n')
-print('Test 2:', test_2)
-print('JPG count:',count_test(test_2))
-print('\n')
-print('Test 3:', test_3)
-print('JPG count:',count_test(test_3))
+print(row)

@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+timm
+opencv-python
+pillow
+numpy
+pandas
+fastapi
+uvicorn
+python-multipart
+pydantic
+requests
+tqdm
+matplotlib
